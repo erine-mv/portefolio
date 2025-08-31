@@ -1,132 +1,220 @@
-/* Reset */
+/*Mvouama Eine*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Corps */
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    padding-top: 80px; /* espace sous le header fixe */
-    padding-bottom: 80px; /* espace au-dessus du footer fixe */
-    font-size: 18px;
+    background-color: #000000;
+    color: #ffffffd7;
+    margin: 0;
+    padding: 20px;
     text-align: center;
+    font-size: 20px;
+   
 }
 
-/* Header + menu */
+.menu {
+    border-top: 5px solid #000000;
+    background: rgba(146, 42, 73, 0.918);
+    color: white;
+    border: none;
+    font-size: 30px; /* Taille de police légèrement réduite pour éviter le dépassement */
+    font-weight: bold;
+     font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+button {
+    background-color: #b0718ae8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+button:hover {
+    background-color: #ffb9ee;
+    transform: scale(1.05);
+    color: rgb(255, 255, 255); /* Modification ajoutée */
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+button:focus {
+    outline: none;
+}
+.submenu {
+    background-color: #e892c679;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;  
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: "Bebas Neue", sans-serif;
+    
+    font-style: normal;
+}
+
+.submenu:hover {
+    background-color: #e892c679;
+    transform: scale(1.05);
+    color: rgb(255, 255, 255); /* Modification ajoutée */
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+}
+
+.center {
+    width: 100%; /* Ajuste selon tes besoins */
+    padding: 20px;
+    background-color: rgba(146, 42, 73, 0.979); /* Couleur de fond semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 5px; /* Espace pour éviter que le contenu ne touche le header */
+    color: #0e0e0e;
+}
+.welcome {
+    text-align: center;
+    background: url('fond.png') no-repeat center center/cover;
+    padding: 100px;
+    color: #fff;
+}
+.welcome h1 {
+        font-family: "Codystar", sans-serif;
+        font-weight: 500;
+        font-size: 4rem;
+        font-style: normal;
+        color: #ffb6c1; /* Rose clair, tu peux adapter */
+        animation: heartbeat 1.5s infinite ease-in-out; /* Ajout de l'effet de battement */
+}
+.welcome p {
+
+    font-family: "Nixie One", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-style: normal;
+}
+.welcome img {
+    margin-top: 70px;
+    max-width: 500px;
+}
 header {
     width: 100%;
-    background-color: rgba(193, 136, 153, 0.95);
+    background-color:rgba(193, 136, 153, 0.927);
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 10;
+    box-sizing: border-box;
 }
 
-.menu ul {
+footer {
+    width: 100%;
+    background-color: rgba(193, 136, 153, 0.927);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    bottom: 0; /* au lieu de top:0 */
+    left: 0;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+nav > ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    background: #000;
+    justify-content: flex-start;
+    background-color: #000000;
+    padding: 15px;
+    margin-left: -20px;
 }
 
-.menu li {
+nav > ul > li {
     position: relative;
 }
 
-.menu a {
+nav > ul > li > a {
     text-decoration: none;
     color: white;
-    padding: 15px 20px;
+    font-weight: bold;
+    padding: 15px;
     display: block;
-    font-family: "Bebas Neue", sans-serif;
+    border-top: 5px solid transparent;
+    transition: border-top 0.3s ease;
+    text-align: center;
 }
 
-.menu a:hover {
-    background: #922a49;
+nav > ul > li.active > a {
+    background-color: #2d5f89;
+    border-bottom: 5px solid #e44d26;
 }
 
-/* Sous-menu */
-.submenu {
-    display: none;
+nav > ul > li > a:hover {
+    background-color: #000000a1;
+    border-top: 50px solid #FBDFE3;
+    text-decoration: none;
+}
+
+nav ul ul {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(146,42,73,0.9);
-    min-width: 200px;
+    background-color: #b7c3d28a;
+    display: none;
+    list-style: none;
+    padding: 0;
+    width: 200px;
 }
 
-.menu li:hover .submenu {
+nav ul li:hover > ul {
     display: block;
 }
 
-.submenu li a {
-    padding: 10px;
-    font-size: 16px;
+nav ul ul li {
+    width: 100%;
 }
 
-/* Bouton menu hamburger */
+nav ul ul li a {
+    padding: 15px 20px;
+    color: white;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+nav ul ul li a:hover {
+    background-color: #000000;
+    text-decoration: none;
+}
+
 .menu-toggle, .toggle-label {
     display: none;
 }
 
-/* Section accueil */
-.welcome {
-    background: url("fond.png") no-repeat center/cover;
-    padding: 60px 20px;
-}
-
-.welcome img {
-    max-width: 300px;
-    border-radius: 10px;
-}
-
-.welcome h1 {
-    font-family: "Codystar", sans-serif;
-    font-size: 3rem;
-    color: #ffb6c1;
-}
-
-.welcome p {
-    margin-top: 20px;
-    font-family: "Nixie One", cursive;
-    font-size: 1.2rem;
-    color: #eee;
-}
-
-/* Contenu centré */
 .center {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(146,42,73,0.9);
-    border-radius: 10px;
-    color: #fff;
-}
-
-/* Vidéo */
-iframe {
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    background: rgba(193, 136, 153, 0.95);
-    color: white;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
+
 
 /* ----------- Tablettes ----------- */
 @media (max-width: 1024px) {
